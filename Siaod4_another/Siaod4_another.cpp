@@ -21,17 +21,26 @@ int main()
     //TASK 1
     regRow reg[N];
     int n = 0;
-    addRow(reg, n);
+    /*addRow(reg, n);
     addRow(reg, n);
     printTable(reg, n);
     insert(reg, n);
     printTable(reg, n);
     deleteID(reg, n);
     printTable(reg, n);
-    printTableID(reg, n);
+    printTableID(reg, n);*/
 
 
     //TASK 2
+    n = 0;
+    regRow* regD = new regRow[n];
+    addRowD(regD, n);
+    addRowD(regD, n);
+    printTable(regD, n);
+    insertD(regD, n);
+    printTable(regD, n);
+    deleteIDD(regD, n);
+    printTable(regD, n);
 
     //TASK 3
     return 0;

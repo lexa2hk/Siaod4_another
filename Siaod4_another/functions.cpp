@@ -84,10 +84,54 @@ void deleteID(regRow* arr, int& n) {
 void addRowD(regRow*& arr,int &n) {
 	n++;
 	regRow* arr1 = new regRow[n];
-	arr1[0] = fillRow(arr1[0]);
-	for (auto i = 1; i < n; i++) {
-		arr1[i] = arr[i-1];
+	for (auto i = 0; i < n-1; i++) {
+		arr1[i] = arr[i];
 	}
+	arr1[n-1] = fillRow(arr1[n-1]);
+	arr = arr1;
+}
+void insertD(regRow*& arr, int& n) {
+	int id;
+	cout << "¬ведите ID кассы дл€ вставки: \n";
+	cin >> id;
+	regRow temp{};
+	temp = fillRow(temp);
+	n++;
+	regRow* arr1 = new regRow[n];
+	arr1[n - 1] = {};
+
+	for (auto i = 0; i < n-1; i++) {
+		arr1[i] = arr[i];
+	}
+
+	for (auto i = 0; i < n; i++) {
+		if (arr1[i].id == id) {
+			for (auto j = i; j < n; j++)
+				swap(temp, arr1[j]);
+			break;
+		}
+	}
+	arr = arr1;
+}
+
+void deleteIDD(regRow*& arr, int& n) {
+	cout << "¬ведите ID кассы дл€ удалени€: \n";
+	int id;
+	cin >> id;
+	for (auto i = 0; i < n; i++) {
+		if (arr[i].id == id) {
+			n--;
+			for (auto j = i; j < n; j++) {
+				swap(arr[j], arr[j + 1]);
+			}
+			i--;
+		}
+	}
+	regRow* arr1 = new regRow[n];
+	for (auto i = 0; i < n; i++) {
+		arr1[i] = arr[i];
+	}
+	arr = arr1;
 }
 
 
