@@ -26,4 +26,12 @@ void addRowD(regRow* &arr,int &n);
 void insertD(regRow*& arr, int& n);
 void deleteIDD(regRow*& arr, int& n);
 
+
+//функции вектор
+void printTableV(vector<regRow> arr, int n);
+void printTableIDV(vector<regRow> arr, int n);
+void addRowV(vector<regRow> &arr, int &n);
+void insertV(vector<regRow> &arr, int &n);
+void deleteIDV(vector<regRow> &arr, int &n);
+
 #endif // !_HEADER

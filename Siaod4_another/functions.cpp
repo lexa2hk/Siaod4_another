@@ -134,4 +134,57 @@ void deleteIDD(regRow*& arr, int& n) {
 	arr = arr1;
 }
 
+//==================================VECTOR=======================================
 
+
+void printTableV(vector<regRow> arr, int n) {
+	cout << "ID | Barcode | Quantity | Price | Discount\n";
+	for (auto i = 0; i < n; i++) {
+		cout << arr[i].id << " " << arr[i].barcode << " " << arr[i].quantity << " " << arr[i].price << " " << arr[i].discount << " " << arr[i].total << endl;
+	}
+}
+
+void printTableIDV(vector<regRow> arr, int n) {
+	cout << "¬ведите ID кассы дл€ вывода: \n";
+	int id;
+	cin >> id;
+
+	cout << "ID | Barcode | Quantity | Price | Discount\n";
+	for (auto i = 0; i < n; i++) {
+		if (arr[i].id = id)
+			cout << arr[i].id << " " << arr[i].barcode << " " << arr[i].quantity << " " << arr[i].price << " " << arr[i].discount << " " << arr[i].total << endl;
+	}
+}
+
+void addRowV(vector<regRow> &arr, int &n) {
+	n++;
+	regRow temp{};
+	arr.push_back(fillRow(temp));
+}
+
+void insertV(vector<regRow> &arr, int &n) {
+	int id;
+	cout << "¬ведите ID кассы дл€ вставки: \n";
+	cin >> id;
+	regRow temp{};
+	for (auto i = 0; i < n; i++) {
+		if (arr[i].id == id) {
+			n++;
+			arr.insert(arr.begin() + i, fillRow(temp));
+			return;
+		}
+	}
+}
+
+void deleteIDV(vector<regRow> &arr, int &n) {
+	int id;
+	cout << "¬ведите ID кассы дл€ удалени€: \n";
+	cin >> id;
+	regRow temp{};
+	for (auto i = 0; i < n; i++) {
+		if (arr[i].id == id) {
+			n--;
+			arr.erase(arr.begin() + i);
+		}
+	}
+}
