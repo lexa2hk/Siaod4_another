@@ -33,7 +33,7 @@ int main()
 
 
     //TASK 2
-    /*n = 0;
+    n = 0;
     regRow* regD = new regRow[n];
     addRowD(regD, n);
     addRowD(regD, n);
@@ -41,12 +41,12 @@ int main()
     insertD(regD, n);
     printTable(regD, n);
     deleteIDD(regD, n);
-    printTable(regD, n);*/
+    printTable(regD, n);
 
     //TASK 3
-    n = 0;
-    vector<regRow> regV;
-    addRowV(regV, n);
+    //n = 0;
+    //vector<regRow> regV;
+   // addRowV(regV, n);
 
     return 0;
 }
